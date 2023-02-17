@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
+allowNewServer:boolean=false
+constructor(){
+setTimeout(
+()=>{
+this.allowNewServer=true;
+}
+  ,2000)
+
+}
 
 }
