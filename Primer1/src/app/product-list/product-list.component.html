@@ -1,1 +1,5 @@
-<app-product></app-product>
+<input type="text" [formControl]="filter" placeholder="Filter states...">
+<ul>
+	<li *ngFor="let country of filteredCountry$ | async">{{country.name}}</li>
+</ul>
+
