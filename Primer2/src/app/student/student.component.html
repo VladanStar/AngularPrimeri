@@ -1,0 +1,14 @@
+<div class="alert alert−primary">
+  <h3>Student: {{ ime }}</h3>
+
+  <p>Prosek: {{ prosek() }}</p>
+  <hr />
+
+  <div class="form−group">
+    <label for="ocena">Dodaj ocenu:</label>
+
+    <input type="text" id="ocena" class="form−control" [(ngModel)]="ocenaStr" />
+  </div>
+
+  <button class="btn btn−primary" (click)="onDodajOcenu()">Dodaj ocenu</button>
+</div>
