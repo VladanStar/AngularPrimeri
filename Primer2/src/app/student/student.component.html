@@ -1,6 +1,13 @@
 <div class="alert alert−primary">
   <h3>Student: {{ ime }}</h3>
+<div class="form-check">
+<input type="checkbox" class="form-check-input"
+id="prosekCheck"
+placeholder="#"
+(change)="onPromeniPrikazivanjeProseka()" >
+<label class="form-check-label" for="prosek">Prikazi Prosek</label>
 
+</div>
   <p>Prosek: {{ prosek() }}</p>
   <hr />
 

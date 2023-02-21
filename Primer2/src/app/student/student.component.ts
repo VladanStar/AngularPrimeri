@@ -19,12 +19,14 @@ export class StudentComponent {
   public ocene: Array<number> = [];
   public ime: string = '';
   public ocenaStr: string = '';
+public prikaziProsek:boolean;
 
   constructor() {
     this.ime =
       StudentComponent.listaImena[
         Math.floor(Math.random() * StudentComponent.brojImena)
       ];
+this.prikaziProsek=false
   }
 
   public prosek(): number {
@@ -53,5 +55,8 @@ export class StudentComponent {
     this.ocene.push(ocenaNum);
 
     this.ocenaStr = "";
+  }
+  onPromeniPrikazivanjeProseka():void{
+    this.prikaziProsek = !this.prikaziProsek;
   }
 }
