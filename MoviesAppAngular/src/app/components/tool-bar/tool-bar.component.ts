@@ -4,15 +4,16 @@ import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-tool-bar',
   templateUrl: './tool-bar.component.html',
-  styleUrls: ['./tool-bar.component.css'],
+  styleUrls: ['./tool-bar.component.scss']
 })
-export class ToolBarComponent {
-  constructor(private router: Router) {}
+export class ToolBarComponent implements OnInit {
+
+  constructor(private router: Router) { }
   routes = this.router.config.map((route: Route) => route?.path || 'Home');
   pageTitle = 'Home';
 
   ngOnInit(): void {
-    console.log(this.routes);
+    console.log(this.routes)
   }
 
   changeRoute(route: string): void {

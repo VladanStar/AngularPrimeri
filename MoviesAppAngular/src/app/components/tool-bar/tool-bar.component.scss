@@ -6,16 +6,16 @@
   top: 0px;
   display: grid;
   grid-template-columns: 40% 55%;
-}
 
-.nav-container {
-  display: flex;
-  align-items: center;
-}
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
 
-.page-title {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  .page-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
