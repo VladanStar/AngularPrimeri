@@ -1,1 +1,12 @@
-<p>movies-home works!</p>
+
+<div class="movie-home-wrapper">
+  <div>
+      <div class="poster-wrapper">
+          <img [src]="imageUrl" width="200px" height="300px" alt="#" />
+      </div>
+      <div class="icon-bar">
+          <fa-icon [icon]="faFav" (click)="onFavClick()"></fa-icon>
+          <fa-icon [icon]="faWatched" (click)="onWatchedClick()"></fa-icon>
+      </div>
+  </div>
+</div>

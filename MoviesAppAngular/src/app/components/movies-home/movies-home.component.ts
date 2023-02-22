@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { faHeart, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faNotFav, faEye as faNotWatched } from '@fortawesome/free-regular-svg-icons';
 @Component({
-  selector: 'app-movies-home',
-  templateUrl: './movies-home.component.html',
-  styleUrls: ['./movies-home.component.css']
+  selector: 'app-movie-home',
+  templateUrl: './movie-home.component.html',
+  styleUrls: ['./movie-home.component.css']
 })
-export class MoviesHomeComponent {
+export class MovieHomeComponent implements OnInit {
+  @Input() imageUrl: string = '';
+  @Input() id: number = 0;
+  @Input() isWatched: boolean = false;
+  @Input() isFav: boolean = false;
+  @Output() favClick = new EventEmitter();
+  @Output() watchedClick = new EventEmitter();
+
+  faFav = faNotFav;
+  faWatched = faNotWatched;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.faFav = this.isFav ? faHeart : faNotFav;
+    this.faWatched = this.isWatched ? faEye : faNotWatched;
+  }
+
+  ngOnChange(): void {
+    console.log('Change', this.isFav)
+  }
+
+  onFavClick(): void {
+    this.favClick.emit();
+  }
+
+  onWatchedClick(): void {
+    this.watchedClick.emit();
+  }
 
 }
