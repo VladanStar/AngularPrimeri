@@ -1,4 +1,4 @@
-<button type="button" pButton label="PrimeNG" title="#"></button>
+<!-- <button type="button" pButton label="PrimeNG" title="#"></button>
 <button pButton type="button" class="p-button-info" title="#" label="Vladan"></button>
 <button pButton type="button" label="Primary" title="#"></button>
 <button pButton type="button" label="Secondary" class="p-button-secondary" title="#"></button>
@@ -7,3 +7,29 @@
 <button pButton type="button" label="Warning"  title="#" class="p-button-warning"></button>
 <button pButton type="button" label="Help" class="p-button-help" title="#"></button>
 <button pButton type="button" label="Danger" class="p-button-danger" title="#"></button>
+<br><br><br><br>
+<input type="text" pInputText  title="#"/>
+<input type="text" pInputText class="p-inputtext-sm" placeholder="Small">
+<input type="text" pInputText class="p-inputtext-sm" placeholder="Small">
+<input type="text" pInputText class="p-inputtext-lg"  placeholder="Large"> -->
+<div class="p-inputgroup">
+  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+  <input type="text" pInputText placeholder="Username">
+</div>
+
+<div class="p-inputgroup">
+  <span class="p-inputgroup-addon"><i class="pi pi-tags"></i></span>
+  <span class="p-inputgroup-addon"><i class="pi pi-shopping-cart"></i></span>
+  <input type="text" pInputText placeholder="Price">
+  <span class="p-inputgroup-addon">$</span>
+  <span class="p-inputgroup-addon">.00</span>
+</div>
+<p-card>
+  <ng-template pTemplate="header">
+      Header content here
+  </ng-template>
+  Body Content
+  <ng-template pTemplate="footer">
+      Footer content here
+  </ng-template>
+</p-card>
