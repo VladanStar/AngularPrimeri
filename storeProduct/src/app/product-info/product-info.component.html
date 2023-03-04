@@ -1,6 +1,4 @@
 
-
-
 <h2>Products</h2>
 <hr>
 <div class="container">
@@ -8,10 +6,9 @@
 <div *ngFor="let product of products">
 <p> Id: {{product.productId}}</p>
 <p>Product Name: {{product.name}}</p>
-<!-- <p>Price:{{product.price}}</p>
-<p>description: {{product.description}}</p> -->
-<a [routerLink]="['/products', product.productId]" class="btn btn−primary">
-  See details</a>
+<p>Price:{{product.price}}</p>
+<p>description: {{product.description}}</p>
+
 
 <hr>
 </div>
