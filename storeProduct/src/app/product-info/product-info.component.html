@@ -1,14 +1,15 @@
 
 <h2>Products</h2>
 <hr>
-<div class="container">
-<div class="row">
-<div *ngFor="let product of products">
+<div class="container" >
+<div class="row" >
+<div *ngIf="product" >
 <p> Id: {{product.productId}}</p>
 <p>Product Name: {{product.name}}</p>
 <p>Price:{{product.price}}</p>
 <p>description: {{product.description}}</p>
-
+<!-- <button (click)="addToCart()" class="btn btn−primary">Add to cart</button>
+10 </div> -->
 
 <hr>
 </div>
