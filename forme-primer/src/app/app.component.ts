@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'forme-primer';
+
+  @ViewChild('f') signupForm!: NgForm;
+  defaultQuestion:any='pet';
+  sugestedUserName() {
+    let sugestedName: string = 'Superrior';
+  }
+  // onSubmit(form:NgForm){
+  // // console.log("Submited");
+  // console.log(form);
+  // }
+  onSubmit() {
+    console.log(this.signupForm);
+  }
 }
