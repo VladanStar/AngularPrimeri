@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from '../services/product.service';
 // import { Product } from '../models/product.model';
 import { ActivatedRoute } from '@angular/router';
+import { CartServiceService } from '../services/cart-service.service';
+
 // import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,8 +17,9 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
-  ) {
+    private productService: ProductService,
+    private cartService: CartServiceService)
+  {
 
   }
 
@@ -39,4 +42,10 @@ ngOnDestroy(): void {
     this.paramMapSub.unsubscribe();
     }
 }
+
+public addToCart() {
+  this.cartService.addToCart(this.product);
+   window.alert('Your product has been added to the cart!');
+   }
+
 }
