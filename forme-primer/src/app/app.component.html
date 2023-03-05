@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data">
+        <div id="user-data"
+         ngModelGroup="userData"
+         #userData = 'ngModelGroup'>
           <div class="form-group my-5">
             <label for="username">Username</label>
             <input
@@ -28,12 +30,14 @@
               required
               email
               #email="ngModel"
+
             />
-            <p  class="help-block" *ngIf="!email.valid && email.touched">
+            <span  class="help-block" *ngIf="!email.valid && email.touched">
               Nije uneta valjana email adresa
-            </p>
+            </span>
           </div>
         </div>
+<p *ngIf="userData">User Group is Invalid</p>
         <div class="form-group my-5">
           <label for="secret">Secret Questions</label>
           <select
@@ -46,6 +50,19 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <label for="" title="#"></label>
+<div class="form-group">
+
+<textarea name="questipnAnswer"
+id=""
+cols="10"
+rows="5"
+[(ngModel)]="answer"
+class="form-control"
+title="#"
+></textarea>
+</div>
+<p>Your replay: {{answer}}</p>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
