@@ -41,6 +41,7 @@
             id="secret"
             class="form-control"
             [ngModel]="defaultQuestion"
+            [value]="defaultQuestion"
             name="secret"
           >
             <option value="pet">Your first Pet?</option>
@@ -50,11 +51,12 @@
         <label for="" title="#"></label>
         <div class="form-group">
           <textarea
-            name="questipnAnswer"
+            name="questinAnswer"
             id=""
             cols="10"
             rows="5"
             [(ngModel)]="answer"
+            [value]="answer"
             class="form-control"
             title="#"
           ></textarea>
@@ -68,7 +70,7 @@
               ngModel
               [value]="gender"
               title="#"
-              required=""
+              required
             />
             <!-- {{ gender }} -->
           </label>
@@ -77,6 +79,17 @@
           Submit
         </button>
       </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row" *ngIf="submitted">
+    <div class="col-12">
+      <h3>Your Data</h3>
+      <p>{{ user.username }}</p>
+      <p>{{ user.email }}</p>
+      <p>{{ user.secretQuestion }}</p>
+      <p>{{ user.answer }}</p>
+      <p>{{ user.gender }}</p>
     </div>
   </div>
 </div>
