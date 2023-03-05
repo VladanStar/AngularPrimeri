@@ -2,10 +2,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data"
-         ngModelGroup="userData"
-         #userData = 'ngModelGroup'>
-          <div class="form-group my-5">
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+          <div class="form-group my-2">
             <label for="username">Username</label>
             <input
               type="text"
@@ -19,7 +17,7 @@
           <button class="btn btn-default bg-warning" type="button">
             Suggest an Username
           </button>
-          <div class="form-group my-5">
+          <div class="form-group my-2">
             <label for="email">Mail</label>
             <input
               type="email"
@@ -30,52 +28,51 @@
               required
               email
               #email="ngModel"
-
             />
-            <span  class="help-block" *ngIf="!email.valid && email.touched">
+            <span class="help-block" *ngIf="!email.valid && email.touched">
               Nije uneta valjana email adresa
             </span>
           </div>
         </div>
-<p *ngIf="userData">User Group is Invalid</p>
-        <div class="form-group my-5">
+        <p *ngIf="userData">User Group is Invalid</p>
+        <div class="form-group my-2">
           <label for="secret">Secret Questions</label>
           <select
-           id="secret"
-           class="form-control"
+            id="secret"
+            class="form-control"
             [ngModel]="defaultQuestion"
             name="secret"
-            >
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
         <label for="" title="#"></label>
-<div class="form-group">
-
-<textarea name="questipnAnswer"
-id=""
-cols="10"
-rows="5"
-[(ngModel)]="answer"
-class="form-control"
-title="#"
-></textarea>
-</div>
-<p>Your replay: {{answer}}</p>
-<div class="radio" *ngFor="let gender of genders">
-<label for="" title="3">
-<input type="radio"
-name="gender"
-ngModel
-[value]="gender"
-title="#"
->
-{{gender}}
-</label>
-
-
-</div>
+        <div class="form-group">
+          <textarea
+            name="questipnAnswer"
+            id=""
+            cols="10"
+            rows="5"
+            [(ngModel)]="answer"
+            class="form-control"
+            title="#"
+          ></textarea>
+        </div>
+        <p>Your replay: {{ answer }}</p>
+        <div class="radio" *ngFor="let gender of genders">
+          <label for="" title="3">
+            <input
+              type="radio"
+              name="gender"
+              ngModel
+              [value]="gender"
+              title="#"
+              required=""
+            />
+            <!-- {{ gender }} -->
+          </label>
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
