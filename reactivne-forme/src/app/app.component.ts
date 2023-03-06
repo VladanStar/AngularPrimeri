@@ -8,12 +8,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   title = 'reactivne-forme';
-singupForm!:FormGroup;
+signupForm!:FormGroup;
 
 genders=['male', 'female'];
 
 ngOnInit(): void {
-this.singupForm=new FormGroup({
+this.signupForm=new FormGroup({
 'username':new FormControl(null, Validators.required),
 'email':new FormControl(null, [Validators.required, Validators.email]),
 'gender':new FormControl('male'),
@@ -21,7 +21,7 @@ this.singupForm=new FormGroup({
 });
 }
 onSubmit(){
-console.log(this.singupForm)
+console.log(this.signupForm)
 }
 }
 
