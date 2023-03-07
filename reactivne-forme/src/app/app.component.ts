@@ -29,7 +29,11 @@ console.log(this.signupForm)
 }
 
 onAddHobby(){
-this.signupForm.get('hobbies')
+const control =new FormControl(null, Validators.required);
+(<FormArray>this.signupForm.get('hobbies')).push(control)
+}
+getControls() {
+  return (<FormArray>this.signupForm.get('hobbies')).controls;
 }
 }
 
