@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     });
   }
   onLoadApi() {
-this.registrationForm.setValue({
+this.registrationForm.setValue({//patchValue samo jedan deo obrasca
 username:"Vladan",
 password:"Filter74",
 conpassword:'Fulter74',
@@ -33,4 +33,7 @@ postcode:34000
 }
 })
   }
+onSubmit(){
+console.log(this.registrationForm)
+}
 }
