@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 <h1>Registration Form</h1>
 <form [formGroup]="registrationForm">
 <div class="form-group">
@@ -11,7 +11,7 @@ formControlName="username"
   >
 </div>
 <hr>
-<div class="form-group">
+<div class="form-group" >
   <label for="password">Password</label>
   <input
   type="password"
@@ -31,6 +31,53 @@ formControlName="conpassword"
   >
   </div>
 <hr>
+<div formGroupName="addressForm">
+  <div class="form-group">
+    <label for="state">State</label>
+    <input
+    type="text"
+    id="state"
+  formControlName="state"
+    class="form-control"
+    >
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input
+      type="text"
+      id="city"
+    formControlName="city"
+      class="form-control"
+      >
+      </div>
+      <hr>
+      <div class="form-group">
+        <label for="postcode">Postal code</label>
+        <input
+        type="text"
+        id="postcode"
+      formControlName="postcode"
+        class="form-control"
+        >
+        </div>
+</div>
+
+
+
+<hr>
+<!-- <div class="form-group">
+  <label for="email">Email</label>
+  <input
+  type="email"
+  id="email"
+formControlName="email"
+  class="form-control"
+  >
+  </div> -->
+
 <button class="btn btn-primary" type="submit">Register</button>
+<button (click)="onLoadApi()" class="btn btn-warning" type="button">Load API Data</button>
 </form>
+{{registrationForm.value | json}}
+<!-- {{addressForm.value |json}} -->
 </div>

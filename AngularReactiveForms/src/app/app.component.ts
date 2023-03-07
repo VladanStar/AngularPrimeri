@@ -4,19 +4,33 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  registrationForm!: FormGroup;
 
-
- registrationForm!:FormGroup;
-
-ngOnInit(): void {
-this.registrationForm=new FormGroup( {
-  'username':new FormControl(null, Validators.required),
-'email':new FormControl(null, [Validators.required, Validators.email]),
-'conpassword':new FormControl(null, Validators.required),
-   })
+  ngOnInit(): void {
+    this.registrationForm = new FormGroup({
+      username: new FormControl(null, Validators.required),
+      password: new FormControl(null, [Validators.required]),
+      conpassword: new FormControl(null, Validators.required),
+      addressForm: new FormGroup({
+        city: new FormControl(null, Validators.required),
+        state: new FormControl(null, Validators.required),
+        postcode: new FormControl(null, Validators.required),
+      }),
+    });
+  }
+  onLoadApi() {
+this.registrationForm.setValue({
+username:"Vladan",
+password:"Filter74",
+conpassword:'Fulter74',
+addressForm:{
+city:"Kragujevac",
+state:"Serbia",
+postcode:34000
 }
-
+})
+  }
 }
