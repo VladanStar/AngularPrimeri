@@ -14,8 +14,11 @@ genders=['male', 'female'];
 
 ngOnInit(): void {
 this.signupForm=new FormGroup({
-'username':new FormControl(null, Validators.required),
-'email':new FormControl(null, [Validators.required, Validators.email]),
+'userData':new FormControl({
+  'username':new FormControl(null, Validators.required),
+  'email':new FormControl(null, [Validators.required, Validators.email]),
+}),
+
 'gender':new FormControl('male'),
 
 });
