@@ -1,0 +1,56 @@
+<div class="container">
+<div class="row">
+
+      <!--
+          Kreirajte formu sa sledecim kontrolama i validatiorima
+          1) Project Name (ne sme da bude prazno)
+          2) Mail (ne bi smelo da bude prazno i trebalo bi da ima validacuju maila)
+          3) Project Status Dropdown, sa tri vrednosti: 'Stable', 'Critical', 'Finished'
+          4) Submit Button
+
+          Dodajte vasu custom validaciju da ne moze da se doda naziv projekta "Test"
+
+          Pri sumbitaju forme ispisite sve u consoli.
+      -->
+<div class="col-xs-12 col-sm-10 col-md-8">
+<form  [formGroup]="projectForm">
+<div class="form-group my-5">
+<label for="name">Project Name</label>
+<input
+type="text"
+id="name"
+formControlName="projectName"
+class="form-control"
+>
+</div>
+<hr>
+<div class="form-group">
+  <label for="email">Project Email</label>
+  <input
+  type="email"
+formControlName="email"
+  id="email"
+  class="form-control"
+  >
+  </div>
+<hr>
+<div class="form-control my-5">
+<label for="status">Project Status</label>
+<select
+id="status"
+formControlName="'projectStatus"
+class="form-control"
+>
+<option value="stable">Stable</option>
+<option value="critical">Critical</option>
+<option value="finished">Finished</option>
+
+</select>
+
+</div>
+<button class="btn btn-primary" type="submit">Crate Ptoject</button>
+</form>
+</div>
+</div>
+</div>
+

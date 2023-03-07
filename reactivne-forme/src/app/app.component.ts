@@ -18,7 +18,7 @@ forbiddenUsernames=['Michael', "Anna"];
 ngOnInit(): void {
 this.signupForm=new FormGroup({
 'userData':new FormControl({
-  'username':new FormControl(null, Validators.required, this.forbiddenNames.bind(this)),
+  // 'username':new FormControl(null, Validators.required, this.forbiddenNames.bind(this)),
   'email':new FormControl(null, [Validators.required, Validators.email]),
 }),
 
