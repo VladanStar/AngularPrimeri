@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,11 +20,16 @@ this.signupForm=new FormGroup({
 }),
 
 'gender':new FormControl('male'),
+'hobbies':new FormArray([]),
 
 });
 }
 onSubmit(){
 console.log(this.signupForm)
+}
+
+onAddHobby(){
+this.signupForm.get('hobbies')
 }
 }
 
