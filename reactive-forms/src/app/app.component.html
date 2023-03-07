@@ -13,7 +13,7 @@
           Pri sumbitaju forme ispisite sve u consoli.
       -->
 <div class="col-xs-12 col-sm-10 col-md-8">
-<form  [formGroup]="projectForm">
+<form  [formGroup]="projectForm" (ngSubmit)="onSaveProject()">
 <div class="form-group my-5">
 <label for="name">Project Name</label>
 <input
@@ -38,7 +38,7 @@ formControlName="email"
 <label for="status">Project Status</label>
 <select
 id="status"
-formControlName="'projectStatus"
+formControlName="projectStatus"
 class="form-control"
 >
 <option value="stable">Stable</option>
