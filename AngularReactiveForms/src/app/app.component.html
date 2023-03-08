@@ -40,6 +40,7 @@ formControlName="password"
 formControlName="conpassword"
   class="form-control"
   >
+  <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
   </div>
 <hr>
 <div formGroupName="addressForm">
