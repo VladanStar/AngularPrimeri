@@ -4,16 +4,22 @@
 <div class="form-group">
 <label for="username">Username</label>
 <input
-[class.is-invalid]="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched"
+[class.is-invalid]="userName?.invalid && userName?.touched"
 type="text"
  id="username"
 formControlName="username"
   class="form-control"
 
   >
-<!-- <small [class.d-none]="registrationForm.get('usename')?.valid || registrationForm.get('username')?.untouched" class=" text-danger">Username is required</small> -->
+<!-- <small [class.d-none]="registrationForm.get('usename')?.valid || userName" class=" text-danger">Username is required</small> -->
 
+<div *ngIf="userName?.invalid && userName?.touched">
+<small  *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
+<br>
+<small *ngIf="userName?.errors?.['minlenght']" class="text-danger">Username mast be min lenght 3 caracters</small>
+<small *ngIf="userName?.errors?.forbiddenName" class="text-danger">'{{userName?.errors?.forbiddenName.value}}'Username mast be min lenght 3 caracters</small>
 
+</div>
 </div>
 <hr>
 <div class="form-group" >
