@@ -10,10 +10,10 @@ export class AppComponent implements OnInit {
   //  registrationForm!: FormGroup;
 constructor(private fb:FormBuilder){}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
     registrationForm=this.fb.group({
-username:['', Validators.required],
-password:['', Validators.required],
+username:['', [Validators.required, Validators.minLength(5)]],
+password:['', [Validators.required, Validators.minLength(5)]],
 conpassword:['', Validators.required],
 addressForm:this.fb.group({
 city:['', Validators.required],
@@ -31,7 +31,7 @@ postcode:['', Validators.required]
     //     postcode: new FormControl(null, Validators.required),
     //   }),
     // });
-  }
+
   onLoadApi() {
 this.registrationForm.setValue({//patchValue samo jedan deo obrasca
 username:"Vladan",
@@ -40,7 +40,7 @@ conpassword:'Fulter74',
 addressForm:{
 city:"Kragujevac",
 state:"Serbia",
-postcode:34000
+postcode:'34000'
 }
 })
   }

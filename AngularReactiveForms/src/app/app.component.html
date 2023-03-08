@@ -4,11 +4,16 @@
 <div class="form-group">
 <label for="username">Username</label>
 <input
+[class.is-invalid]="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched"
 type="text"
  id="username"
 formControlName="username"
   class="form-control"
+
   >
+<!-- <small [class.d-none]="registrationForm.get('usename')?.valid || registrationForm.get('username')?.untouched" class=" text-danger">Username is required</small> -->
+
+
 </div>
 <hr>
 <div class="form-group" >
