@@ -61,6 +61,7 @@ export class AppComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.registrationForm);
+
   }
   get userName() {
     return this.registrationForm.get('username');

@@ -34,12 +34,11 @@ formControlName="password"
 <hr>
 <div class="form-group">
   <label for="conpassword">Confirm Password</label>
-  <input
-  type="password"
-  id="conpassword"
-formControlName="conpassword"
-  class="form-control"
-  >
+  <input type="password"
+   [class.is-invalid]="registrationForm.errors?.misMatch"
+    formControlName="conpassword"
+    class="form-control"
+    placeholder="pass">
   <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
   </div>
 <hr>
