@@ -4,11 +4,22 @@
 <div class="form-group">
 <label for="username">Username</label>
 <input
+[class.is-invalid]="userName?.invalid && userName?.touched"
 type="text"
  id="username"
 formControlName="username"
   class="form-control"
+
   >
+<!-- <small [class.d-none]="registrationForm.get('usename')?.valid || userName" class=" text-danger">Username is required</small> -->
+
+<div *ngIf="userName?.invalid && userName?.touched">
+<small  *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
+<br>
+<small *ngIf="userName?.errors?.['minlenght']" class="text-danger">Username mast be min lenght 3 caracters</small>
+<small *ngIf="userName?.errors?.forbiddenName" class="text-danger">'{{userName?.errors?.forbiddenName.value}}'Username mast be min lenght 3 caracters</small>
+
+</div>
 </div>
 <hr>
 <div class="form-group" >
@@ -23,12 +34,12 @@ formControlName="password"
 <hr>
 <div class="form-group">
   <label for="conpassword">Confirm Password</label>
-  <input
-  type="password"
-  id="conpassword"
-formControlName="conpassword"
-  class="form-control"
-  >
+  <input type="password"
+   [class.is-invalid]="registrationForm.errors?.misMatch"
+    formControlName="conpassword"
+    class="form-control"
+    placeholder="pass">
+  <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
   </div>
 <hr>
 <div formGroupName="addressForm">
