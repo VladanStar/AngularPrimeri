@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+=======
 import { FormBuilder, Validators } from '@angular/forms';
 // import { forbiddenNameValidators } from './shared/user-name.validator';
 import { ForbiddenNameValidator } from './shared/user-name.validator';
 import { PasswordValidator } from './shared/password.validator';
+>>>>>>> 611847d8bd914c4639add4d99b1d4e63c63d56f9
 
 @Component({
   selector: 'app-root',
@@ -10,8 +15,14 @@ import { PasswordValidator } from './shared/password.validator';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+<<<<<<< HEAD
+
+  constructor(private fb: FormBuilder) { }
+  registrationForm!: FormGroup;
+=======
   //  registrationForm!: FormGroup;
   constructor(private fb: FormBuilder) {}
+>>>>>>> 611847d8bd914c4639add4d99b1d4e63c63d56f9
 
   ngOnInit(): void {}
   registrationForm = this.fb.group(
