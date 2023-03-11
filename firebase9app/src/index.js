@@ -24,13 +24,14 @@ initializeApp(firebaseConfig);
 // init services
 const db = getFirestore()
 
+
 // collection ref
 const colRef = collection(db, 'books')
 
 // get collection data
 getDocs(colRef)
   .then(snapshot => {
-    // console.log(snapshot.docs)
+    console.log(snapshot.docs)
     let books = []
     snapshot.docs.forEach(doc => {
       console.log(snapshot.docs)
