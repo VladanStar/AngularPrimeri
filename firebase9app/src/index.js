@@ -1,5 +1,9 @@
 
-import initializeApp from "firebase/app";
+import {initializeApp }from "firebase/app";
+
+import {
+  getFirestore, collection, getDocs
+} from 'firebase/firestore'
 // console.log('Hello from index.js');
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -29,6 +33,7 @@ getDocs(colRef)
     // console.log(snapshot.docs)
     let books = []
     snapshot.docs.forEach(doc => {
+      console.log(snapshot.docs)
       books.push({ ...doc.data(), id: doc.id })
     })
     console.log(books)
