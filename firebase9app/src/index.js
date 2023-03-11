@@ -1,3 +1,5 @@
+
+import initializeApp from "firebase/app";
 // console.log('Hello from index.js');
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -9,3 +11,28 @@ const firebaseConfig = {
   appId: "1:999254885727:web:0fd32ff62aa80eb30f62ea",
   measurementId: "G-HL35MJR4N0"
 };
+
+
+// init firebase
+
+initializeApp(firebaseConfig);
+
+// init services
+const db = getFirestore()
+
+// collection ref
+const colRef = collection(db, 'books')
+
+// get collection data
+getDocs(colRef)
+  .then(snapshot => {
+    // console.log(snapshot.docs)
+    let books = []
+    snapshot.docs.forEach(doc => {
+      books.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(books)
+  })
+  .catch(err => {
+    console.log(err.message)
+  })
