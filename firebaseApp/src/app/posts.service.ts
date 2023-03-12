@@ -21,7 +21,7 @@ export class PostsService {
     this.http
       .post<{ name: string }>(
         'https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
-        // kada se kopira link treba sa ostane posts.json
+        // kada se kopira link treba sa ostane /posts.json
         postData,
         {
           observe: 'response',

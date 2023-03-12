@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private errorSub: Subscription = new Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
-
+// htpp request se stavlja u servise 
   ngOnInit() {
     this.errorSub = this.postsService.error.subscribe((errorMessage) => {
       this.error = errorMessage ? errorMessage : null;
