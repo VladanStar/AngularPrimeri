@@ -14,8 +14,8 @@ import { PostsService } from './posts.service';
 export class AppComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching = false;
-  error: string | null;
-  private errorSub: Subscription;
+  error!: string | null;
+  private errorSub: Subscription = new Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
