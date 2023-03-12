@@ -35,7 +35,7 @@ export class PostsService {
 
   fetchPosts() {
     let searchParams = new HttpParams();
-    searchParams = searchParams.append('print', 'pretty');
+    searchParams = searchParams.append('print', 'pretty');// pretty moze da bude test ne mora da bude string
     searchParams = searchParams.append('custom', 'key');
     return this.http
       .get<{ [key: string]: Post }>(
