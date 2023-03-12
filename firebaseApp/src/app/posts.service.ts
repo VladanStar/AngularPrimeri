@@ -10,7 +10,7 @@ import { Subject, throwError } from 'rxjs';
 
 import { Post } from './post.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'root' }) // ovaj servis je svuda dostupan kada je  providedIn: root
 export class PostsService {
   error = new Subject<string>();
 
@@ -20,7 +20,8 @@ export class PostsService {
     const postData: Post = { title: title, content: content };
     this.http
       .post<{ name: string }>(
-        'https://test123-19673-default-rtdb.firebaseio.com/posts.json',
+        'https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
+        // kada se kopira link treba sa ostane posts.json
         postData,
         {
           observe: 'response',
@@ -38,7 +39,7 @@ export class PostsService {
     searchParams = searchParams.append('custom', 'key');
     return this.http
       .get<{ [key: string]: Post }>(
-        'https://test123-19673-default-rtdb.firebaseio.com/posts.json',
+        'https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
         {
           headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
           params: searchParams,
@@ -65,7 +66,7 @@ export class PostsService {
 
   deletePosts() {
     return this.http
-      .delete('https://test123-19673-default-rtdb.firebaseio.com/posts.json', {
+      .delete('https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json', {
         observe: 'events',
         responseType: 'text',
       })
