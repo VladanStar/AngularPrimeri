@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class YouTubeSearchComponent {
 
+
+   YOUTUBE_API_KEY: string = "AIzaSyA9qZ_G0QNUNdnJt2P36JKvrrylnmAwbMI";
+   YOUTUBE_API_URL: string = "https://www.googleapis.com/youtube/v3/search";
 }

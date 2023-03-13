@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SimpleHttpComponent } from './simple-http/simple-http.component';
 import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.component';
+// import { youTubeSearchInjectables } from './you-tube-search/you-tube-search.injectables';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.compon
     BrowserModule,
 HttpClientModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
