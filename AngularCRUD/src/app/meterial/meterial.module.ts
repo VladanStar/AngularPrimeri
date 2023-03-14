@@ -6,7 +6,7 @@ MatToolbarModule
 ];
 
 @NgModule({
-  declarations: [materialComponennts],
+  declarations: [],
   imports: [materialComponennts],
   exports: [materialComponennts],
 })
